@@ -217,7 +217,8 @@
    margin: auto;
    display: flex;
    align-items: flex-start;
-   background-color: #FBFEFC;
+   background: #FBFEFC url(BG.svg) no-repeat center center;
+   background-size: contain;
    border: 1px solid #72B9BC;
    border-radius: 8px;
    padding: 16px;

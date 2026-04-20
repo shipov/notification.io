@@ -32,7 +32,7 @@ const createToast = (id) => {
                     <button class="btn-close" onclick="hideNotification()">Закрыть</button>
                 </div>
             </div>
-            <button class="notification-close" onclick="removeToast(this.parentElement)"></button>
+            <button class="notification-close" onclick="navigateToTask()"></button>
         </div>
     </div>`;
     notifications.appendChild(toast); // Append the toast to the notification ul
