@@ -22,7 +22,7 @@ const createToast = (id) => {
     toast.className = `toast ${id}`; // Setting the classes for the toast
     // Setting the inner HTML for the toast
     toast.innerHTML = `<div class="notification success" id="task-created-notification">
-        <div class="notification-icon"><img src="icon_n.svg" width="100%"></div>
+        <div class="notification-icon"><img src="icon_n.svg" width="46px"></div>
         <div class="notification-content">
             <h4>Задача успешно создана</h4>
             <div class="wrap">

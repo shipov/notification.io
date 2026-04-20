@@ -288,9 +288,10 @@
  }
 
  .btn-close {
-   background-color: #fff;
+   background-color: #ffffff81;
+   backdrop-filter: blur(8px);
    color: black;
-   border: 1px solid #C7E3E4;
+   border: 1px solid #4CA0A3;
    padding: 8px 16px;
    border-radius: 50px;
    cursor: pointer;
