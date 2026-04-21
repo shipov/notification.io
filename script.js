@@ -12,7 +12,7 @@ const toastDetails = {
 const removeToast = (toast) => {
     toast.classList.add("hide");
     if(toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
-    setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+    setTimeout(() => toast.remove(), 700); // Removing the toast after 500ms
 }
 
 const createToast = (id) => {
@@ -22,14 +22,14 @@ const createToast = (id) => {
     toast.className = `toast ${id}`; // Setting the classes for the toast
     // Setting the inner HTML for the toast
     toast.innerHTML = `<div class="notification success" id="task-created-notification">
-        <div class="notification-icon"><img src="icon_n.svg" width="46px"></div>
+        <div class="notification-icon"><img src="icon_n.png" width="46px"></div>
         <div class="notification-content">
             <h4>Задача успешно создана</h4>
             <div class="wrap">
                 <p>Вы можете перейти к её редактированию<br>или назначить исполнителя.</p>
                 <div class="wrap_button">
+                <button class="btn-close" onclick="hideNotification()">Закрыть</button>
                     <button class="btn-primary" onclick="navigateToTask()">Перейти к задаче</button>
-                    <button class="btn-close" onclick="hideNotification()">Закрыть</button>
                 </div>
             </div>
             <button class="notification-close" onclick="navigateToTask()"></button>

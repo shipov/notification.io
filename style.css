@@ -46,19 +46,19 @@
    position: fixed;
    top: 30px;
    right: 20px;
-       
-   
+
+
  }
 
  .notifications :where(.toast, .column) {
    display: flex;
    align-items: center;
- 
+
  }
 
  .notifications .toast {
-   width: 378px;
-   height: 108px;
+   width: 400px;
+   height: 160px;
    position: relative;
    overflow: hidden;
    list-style: none;
@@ -68,14 +68,13 @@
    background: transparent;
    justify-content: space-between;
    animation: show_toast 2s ease forwards;
-  transition: .2s all;
-   
+   transition: .2s all;
+
  }
 
-  .notifications:hover .toast {
-
-          box-shadow: 0 10px 24px #2e81853b;
-  }
+ .notification:hover {
+   box-shadow: 0 10px 32px #2e81853b;
+ }
 
 
  @keyframes show_toast {
@@ -118,23 +117,24 @@
    }
  }
 
- .toast::before {
-  position: absolute;
-  content: "";
-  height: 3px;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
-  animation: progress 5s linear forwards;
-  z-index: 100000;
-}
-@keyframes progress {
-  100% {
-    width: 0%;
-  }
-}
+ .notification::before {
+   position: absolute;
+   content: "";
+   height: 3px;
+   width: 100%;
+   bottom: 0px;
+   left: 0px;
+   animation: progress 5s linear forwards;
+   z-index: 100000;
+ }
 
- .toast.success::before,
+ @keyframes progress {
+   100% {
+     width: 0%;
+   }
+ }
+
+ .notification::before,
  .btn#success {
    background: var(--success);
  }
@@ -162,26 +162,26 @@
  }
 
  .buttons .btn {
-       border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 0 5px;
-    color: var(--light);
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 4px;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 200px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 24px #2e81853b;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   margin: 0 5px;
+   color: var(--light);
+   font-size: 1.2rem;
+   padding: 10px 20px;
+   border-radius: 4px;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   width: 200px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 10px 24px #2e81853b;
  }
 
  @media screen and (max-width: 530px) {
@@ -209,35 +209,28 @@
    flex-direction: row;
    align-items: center;
    justify-content: center;
-   margin-top: 14px;
+   margin-top: 12px;
    gap: 12px;
  }
 
  .notification {
-   margin: auto;
    display: flex;
    align-items: flex-start;
    background: #FBFEFC url(BG.svg) no-repeat center center;
-   background-size: contain;
+   background-size: cover;
    border: 1px solid #72B9BC;
    border-radius: 8px;
    padding: 16px;
    width: 400px;
    height: 106px;
    max-width: calc(100vw - 40px);
-   top: 0;
-   right: 0;
-   left: 0;
-   bottom: 0;
+   position: fixed;
+   top: 20px;
+   right: 20px;
    z-index: 1000;
    animation: slideIn 0.3s ease-out;
    transition: .2s ease-in-out;
-   position: absolute;
  }
-
- /* .notification:hover {
-        box-shadow: 0 10px 24px #2e81853b;
-    } */
 
  .notification-icon {
    margin-right: 16px;
@@ -251,7 +244,7 @@
  }
 
  .notification-content h4 {
-   margin: 0 0 8px 0;
+   margin: 6px 0 4px 0;
    font-size: 15px;
    font-weight: 600;
    color: #000;
@@ -271,15 +264,15 @@
    background-color: #72B9BC;
    color: white;
    border: 1px solid #4CA0A3;
-   text-shadow: 0 0.032rem 0 #000000b8;
-   padding: 8px 16px;
+   text-shadow: 0 0.032rem 0 #00000093;
+   padding: 5px 16px;
    border-radius: 50px;
    cursor: pointer;
    font-size: 10px;
    white-space: nowrap;
    font-family: 'MTSWide-Medium';
    width: 60%;
-   height: 32px;
+   height: 28px;
    transition: .2s all;
  }
 
@@ -292,20 +285,20 @@
    backdrop-filter: blur(8px);
    color: black;
    border: 1px solid #4CA0A3;
-   padding: 8px 16px;
+   padding: 5px 16px;
    border-radius: 50px;
    cursor: pointer;
    font-size: 10px;
    white-space: nowrap;
    font-family: 'MTSWide-Medium';
    width: 40%;
-   height: 32px;
+   height: 28px;
    transition: .2s all;
  }
 
  .btn-close:hover {
-   border: 1px solid #C7E3E4;
-   background: #C7E3E4;
+   border: 1px solid #4CA0A3;
+   background: #c7e3e453;
    color: black;
  }
 
@@ -331,8 +324,9 @@
  }
 
  .notification-close:hover {
-   background: #C7E3E4 no-repeat center center url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 4.5L0.5 0.5ZM0.5 4.5L4.5 0.5Z' fill='%2301A08E' style='fill:%2301A08E;fill:color(display-p3 0.0039 0.6275 0.5569);fill-opacity:1;'/%3E%3Cpath d='M4.5 4.5L0.5 0.5M0.5 4.5L4.5 0.5' stroke='black' style='stroke:black;stroke-opacity:1;' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+   background: #c7e3e453 no-repeat center center url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 4.5L0.5 0.5ZM0.5 4.5L4.5 0.5Z' fill='%2301A08E' style='fill:%2301A08E;fill:color(display-p3 0.0039 0.6275 0.5569);fill-opacity:1;'/%3E%3Cpath d='M4.5 4.5L0.5 0.5M0.5 4.5L4.5 0.5' stroke='black' style='stroke:black;stroke-opacity:1;' stroke-linecap='round'/%3E%3C/svg%3E%0A");
    background-size: 30%;
+   border: 1px solid #4CA0A3;
  }
 
  @keyframes slideIn {
